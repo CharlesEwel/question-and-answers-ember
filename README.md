@@ -1,7 +1,6 @@
 # Questions-answers
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This App allows users to post questions, post answers to questions and vote on the quality of those answers.
 
 ## Prerequisites
 
@@ -46,6 +45,9 @@ Spec | Sample Input | Sample Output
 Display List of Questions | List of Questions is Preloaded into Database | An output list is displayed showing title and author and providing a link to get details
 Add New Questions | User fills out a form specificying question, author and details | This question is added to the list
 Edit Existing Questions | User selects questions and edits it | The updated question is now displayed in the list
+Delete Answers/Questions | A user deletes a question | The question is deleted as are all answers for it
+Voting | A user upvotes an answer | It's displayed score increases by 1
+Ranking | User specifices that they wish to see top rated answers first | ordering of answers switches from chronological to ranked based on upvotes
 
 ## Further Reading / Useful Links
 
@@ -54,3 +56,16 @@ Edit Existing Questions | User selects questions and edits it | The updated ques
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## Known Bugs
+
+None
+
+## Technologies User
+
+* EmberJS
+* Bootstrap
+
+## License
+
+Licensed under MIT License

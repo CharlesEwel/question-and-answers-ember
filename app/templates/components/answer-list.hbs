@@ -1,13 +1,31 @@
-<h1>Answers:</h1>
-<hr>
-{{#each answers as |answer|}}
-  <p>Score: {{answer.upvotes}}</p>
-  <button class="btn" {{action 'upvote' answer}}><img src="/assets/images/arrow-up.png" alt="upvote" height=30px></button>
-  <button class="btn" {{action 'downvote' answer}}><img src="/assets/images/arrow-down.png" alt="downvote" height=30px></button>
-  <h4>{{answer.author}} says,</h4>
-  <p>{{answer.content}}</p>
-  <button class="btn btn-danger" {{action 'deleteAnswer' answer}}>Delete Answer</button>
+{{#if ranked}}
+  <h1>Top Rated Answers:</h1>
+  <button class="btn" {{action "toggleSort"}}>Show Chronologically</button>
   <hr>
+  {{#each sortedAnswers as |answer|}}
+    <p>Score: {{answer.upvotes}}</p>
+    <button class="btn" {{action 'upvote' answer}}><img src="/assets/images/arrow-up.png" alt="upvote" height=30px></button>
+    <button class="btn" {{action 'downvote' answer}}><img src="/assets/images/arrow-down.png" alt="downvote" height=30px></button>
+    <h4>{{answer.author}} says,</h4>
+    <p>{{answer.content}}</p>
+    <button class="btn btn-danger" {{action 'deleteAnswer' answer}}>Delete Answer</button>
+    <hr>
+  {{else}}
+    <p>Sorry nobody has answered this question yet.</p>
+  {{/each}}
 {{else}}
-  <p>Sorry nobody has answered this question yet.</p>
-{{/each}}
+  <h1>Oldest Answers to Newest:</h1>
+  <button class="btn" {{action "toggleSort"}}>Show Top Rated</button>
+  <hr>
+  {{#each answers as |answer|}}
+    <p>Score: {{answer.upvotes}}</p>
+    <button class="btn" {{action 'upvote' answer}}><img src="/assets/images/arrow-up.png" alt="upvote" height=30px></button>
+    <button class="btn" {{action 'downvote' answer}}><img src="/assets/images/arrow-down.png" alt="downvote" height=30px></button>
+    <h4>{{answer.author}} says,</h4>
+    <p>{{answer.content}}</p>
+    <button class="btn btn-danger" {{action 'deleteAnswer' answer}}>Delete Answer</button>
+    <hr>
+  {{else}}
+    <p>Sorry nobody has answered this question yet.</p>
+  {{/each}}
+{{/if}}

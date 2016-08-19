@@ -1,7 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  ranked: true,
+  sortedAnswers: Ember.computed.sort('answers', 'sortDefinition'),
+  sortDefinition: ['upvotes:desc'],
   actions: {
+    toggleSort() {
+      if(this.get("ranked")) {
+        this.set("ranked", false)
+      } else {
+        this.set("ranked", true)
+      }
+    },
     deleteAnswer(answer) {
       var question = this.get("currentQuestion")
       this.sendAction('deleteAnswer', answer, question);
