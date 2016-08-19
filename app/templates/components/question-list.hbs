@@ -1,5 +1,7 @@
 <ul>
   {{#each questions as |question|}}
     {{question-tile question=question}}
+  {{else}}
+    <p>No questions have been written yet</p>
   {{/each}}
 </ul>

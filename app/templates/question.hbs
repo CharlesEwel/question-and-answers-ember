@@ -1,4 +1,16 @@
-<h2>{{model.question}}</h2>
-<h4>{{model.author}}</h4>
-<p>{{model.details}}</p>
-{{edit-question currentQuestion=model editQuestion="editQuestion"}}
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="question">
+      <h2>{{model.question}}</h2>
+      <h4>{{model.author}}</h4>
+      <p>{{model.details}}</p>
+    </div>
+    {{edit-question currentQuestion=model editQuestion="editQuestion"}}
+    {{new-answer currentQuestion=model addAnswer="addAnswer"}}
+    <button {{action 'deleteQuestion' model}}>Delete Question</button>
+  </div>
+  <div class="col-sm-6">
+    {{answer-list currentQuestion=model answers=model.answers deleteAnswer="deleteAnswer"}}
+  </div>
+</div>
