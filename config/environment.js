@@ -9,7 +9,7 @@ module.exports = function(environment) {
       authDomain: "questions-answers-f6cec.firebaseapp.com",
       databaseURL: "https://questions-answers-f6cec.firebaseio.com",
       storageBucket: "",
-    }
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
