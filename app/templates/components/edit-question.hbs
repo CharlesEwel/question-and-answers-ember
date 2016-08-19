@@ -1,0 +1,24 @@
+{{#if questionFormShow}}
+  <h1>Edit Question</h1>
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="question">Question</label>
+          {{input value=question id="question" placeholder = currentQuestion.question}}
+        </div>
+
+        <div class="form-group">
+          <label for="details">Details</label>
+          {{textarea value=details id="details" placeholder=currentQuestion.details}}
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author</label>
+          {{input value=author id="author" placeholder=currentQuestion.author}}
+        </div>
+        <button {{action 'editQuestion' currentQuestion}}>Save</button>
+      </form>
+    </div>
+ {{else}}
+    <button {{action 'showQuestionForm'}}>Edit Question</button>
+{{/if}}

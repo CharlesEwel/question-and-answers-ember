@@ -39,9 +39,13 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
+### Specs
 
-Specify what it takes to deploy your app.
+Spec | Sample Input | Sample Output
+ --- | ---- | -----
+Display List of Questions | List of Questions is Preloaded into Database | An output list is displayed showing title and author and providing a link to get details
+Add New Questions | User fills out a form specificying question, author and details | This question is added to the list
+Edit Existing Questions | User selects questions and edits it | The updated question is now displayed in the list
 
 ## Further Reading / Useful Links
 
@@ -50,4 +54,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
