@@ -15,7 +15,8 @@ export default Ember.Component.extend({
       var params = {
         content: this.get('content'),
         author: this.get('answer-author'),
-        question: this.get('currentQuestion')
+        question: this.get('currentQuestion'),
+        upvotes: 0,
       };
       if(params.content !== undefined && params.author !== undefined && params.author !== "" && params.content !== "") {
         this.set('answerFormShow', false);

@@ -16,7 +16,9 @@ export default Ember.Route.extend({
     },
     addAnswer(params) {
      var newAnswer = this.store.createRecord('answer', params);
+     console.log(newAnswer)
      var question = params.question;
+     console.log(question)
      question.get('answers').addObject(newAnswer);
      newAnswer.save().then(function() {
        return question.save();
@@ -35,6 +37,19 @@ export default Ember.Route.extend({
         return question.destroyRecord();
       });
       this.transitionTo('index');
-    }
+    },
+    upvote(answer, question) {
+      console.log("upvote running")
+      var newScore=answer.get("upvotes")+1;
+      answer.set("upvotes", newScore);
+      answer.save();
+      this.transitionTo('question', question);
+    },
+    downvote(answer, question) {
+      var newScore=answer.get("upvotes")-1;
+      answer.set("upvotes", newScore);
+      answer.save();
+      this.transitionTo('question', question);
+    },
   }
 });
