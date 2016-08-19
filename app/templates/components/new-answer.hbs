@@ -1,6 +1,6 @@
 {{#if answerFormShow}}
-  <h1>New Answer</h1>
-  <div>
+  <div class="answer-form">
+    <h1>New Answer</h1>
     <form>
       <div class="form-group">
         <label for="content">Answer</label>
@@ -10,10 +10,10 @@
         <label for="answer-author">Author</label>
         {{input value=answer-author id="answer-author"}}
       </div>
-      <button {{action 'addAnswer'}}>Add</button>
+      <button class="btn btn-success" {{action 'addAnswer'}}>Add</button>
     </form>
-    <button {{action 'cancel'}}>Cancel</button>
+    <button class="btn btn-warning" {{action 'cancel'}}>Cancel</button>
   </div>
 {{else}}
-  <button {{action 'showAnswerForm'}}>New Answer</button>
+  <button class="btn btn-primary" {{action 'showAnswerForm'}}>New Answer</button>
 {{/if}}

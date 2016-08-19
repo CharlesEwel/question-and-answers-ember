@@ -1,6 +1,6 @@
 {{#if questionFormShow}}
-  <h1>New Question</h1>
-  <div>
+  <div class="question-form">
+    <h1>New Question</h1>
     <form>
       <div class="form-group">
         <label for="question">Question</label>
@@ -16,10 +16,10 @@
         <label for="author">Author</label>
         {{input value=author id="author"}}
       </div>
-      <button {{action 'saveQuestion'}}>Save</button>
+      <button class="btn btn-success" {{action 'saveQuestion'}}>Save</button>
     </form>
-    <button {{action 'cancel'}}>Cancel</button>
+    <button class="btn btn-warning" {{action 'cancel'}}>Cancel</button>
   </div>
 {{else}}
-  <button {{action 'showQuestionForm'}}>New Question</button>
+  <button class="btn btn-primary" {{action 'showQuestionForm'}}>New Question</button>
 {{/if}}

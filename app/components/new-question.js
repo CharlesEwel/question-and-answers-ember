@@ -25,7 +25,7 @@ export default Ember.Component.extend({
         this.set('details', '');
         this.set('author', '');
       } else {
-          alert("You forgot to fill out one of the fields");
+        alert("You forgot to fill out one of the fields");
       }
     }
   }

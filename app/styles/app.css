@@ -2,3 +2,38 @@
   float: right;
   margin-right: 10px;
 }
+
+.jumbotron h1 {
+  margin-left: 20px;
+  color: steelblue;
+}
+
+.question {
+  border: 2px solid steelblue;
+  padding: 3px;
+  margin: 3px;
+}
+
+.edit-form {
+  border: 2px dashed lightblue;
+  padding: 3px;
+  margin: 3px;
+}
+
+.answer-form, .question-form {
+  border: 2px solid steelblue;
+  padding: 3px;
+  margin: 3px;
+}
+
+.btn-success, .btn-info {
+  float: left;
+}
+
+.btn {
+  margin: 3px;
+}
+
+.col-sm-6 {
+  margin-bottom: 10px;
+}
