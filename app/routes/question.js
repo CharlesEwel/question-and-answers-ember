@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  favorites: Ember.inject.service(),
   model(params) {
     return this.store.findRecord('question', params.question_id);
   },
@@ -15,23 +16,21 @@ export default Ember.Route.extend({
       this.transitionTo('question', question.id);
     },
     addAnswer(params) {
-     var newAnswer = this.store.createRecord('answer', params);
-     console.log(newAnswer)
-     var question = params.question;
-     console.log(question)
-     question.get('answers').addObject(newAnswer);
-     newAnswer.save().then(function() {
-       return question.save();
-     });
-     this.transitionTo('question', params.question.id);
-   },
-   deleteAnswer(answer, question) {
-     answer.destroyRecord();
-     this.transitionTo('question', question);
-   },
-   deleteQuestion(question) {
-     var answer_deletions = question.get('answers').map(function(answer) {
-      return answer.destroyRecord();
+      var newAnswer = this.store.createRecord('answer', params);
+      var question = params.question;
+      question.get('answers').addObject(newAnswer);
+      newAnswer.save().then(function() {
+        return question.save();
+      });
+      this.transitionTo('question', params.question.id);
+    },
+    deleteAnswer(answer, question) {
+      answer.destroyRecord();
+      this.transitionTo('question', question);
+    },
+    deleteQuestion(question) {
+      var answer_deletions = question.get('answers').map(function(answer) {
+        return answer.destroyRecord();
       });
       Ember.RSVP.all(answer_deletions).then(function() {
         return question.destroyRecord();
@@ -39,7 +38,6 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
     upvote(answer, question) {
-      console.log("upvote running")
       var newScore=answer.get("upvotes")+1;
       answer.set("upvotes", newScore);
       answer.save();
@@ -51,5 +49,9 @@ export default Ember.Route.extend({
       answer.save();
       this.transitionTo('question', question);
     },
+    addToFavorites(question) {
+      console.log("addToFavorites executes")
+      this.get('favorites').add(question)
+    }
   }
 });
