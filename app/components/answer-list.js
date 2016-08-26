@@ -4,6 +4,9 @@ export default Ember.Component.extend({
   ranked: true,
   sortedAnswers: Ember.computed.sort('answers', 'sortDefinition'),
   sortDefinition: ['upvotes:desc'],
+  numberOfAnswers: Ember.computed('answers', function() {
+    return this.get('answers').get('length')
+  }),
   actions: {
     toggleSort() {
       if(this.get("ranked")) {
