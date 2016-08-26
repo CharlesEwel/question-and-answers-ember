@@ -1,0 +1,5 @@
+{{#if isFavorited}}
+  <button {{action 'removeFromFavorites' question}}>Remove Question From Favorites</button>
+{{else}}
+  <button {{action 'addToFavorites' question}}>Add Question To Favorites</button>
+{{/if}}
