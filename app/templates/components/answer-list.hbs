@@ -3,7 +3,8 @@
   <h1>Top Rated Answers:</h1>
   <button class="btn" {{action "toggleSort"}}>Show Chronologically</button>
   <hr>
-  {{#each sortedAnswers as |answer|}}
+  {{#each sortedAnswers as |answer index|}}
+    {{answer-star index}}
     <p>Score: {{answer.upvotes}}</p>
     <button class="btn" {{action 'upvote' answer}}><img src="/assets/images/arrow-up.png" alt="upvote" height=30px></button>
     <button class="btn" {{action 'downvote' answer}}><img src="/assets/images/arrow-down.png" alt="downvote" height=30px></button>
