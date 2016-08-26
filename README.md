@@ -48,6 +48,7 @@ Edit Existing Questions | User selects questions and edits it | The updated ques
 Delete Answers/Questions | A user deletes a question | The question is deleted as are all answers for it
 Voting | A user upvotes an answer | It's displayed score increases by 1
 Ranking | User specifices that they wish to see top rated answers first | ordering of answers switches from chronological to ranked based on upvotes
+Favorite | Allows users to add and remove questions from a list of favorites | User clicks "add to favorite" on a question page, when they navigate to favorites page that question is displayed there
 
 ## Further Reading / Useful Links
 

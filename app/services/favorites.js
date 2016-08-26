@@ -12,11 +12,11 @@ export default Ember.Service.extend({
   },
 
   contains(question) {
-    var index = this.get('favoriteQuestions').indexOf(question)
+    var index = this.get('favoriteQuestions').indexOf(question);
     if(index>=0) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 });

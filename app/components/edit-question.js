@@ -4,10 +4,10 @@ export default Ember.Component.extend({
   questionFormShow: false,
   actions: {
     showQuestionForm() {
-      this.set('questionFormShow', true)
+      this.set('questionFormShow', true);
     },
     cancel() {
-      this.set('questionFormShow', false)
+      this.set('questionFormShow', false);
       this.set('question', '');
       this.set('details', '');
       this.set('author', '');

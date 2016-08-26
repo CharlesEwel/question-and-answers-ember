@@ -7,10 +7,10 @@ export default Ember.Component.extend({
   }),
   actions: {
     addToFavorites(question) {
-      this.get('favorites').add(question)
+      this.get('favorites').add(question);
     },
     removeFromFavorites(question) {
-      this.get('favorites').remove(question)
+      this.get('favorites').remove(question);
     }
   }
 });
